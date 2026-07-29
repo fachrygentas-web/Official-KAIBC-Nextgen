@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | KAIBC Nextgen</title>
+    <!-- FontAwesome untuk ikon stik Roblox & Instagram -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0a0a0a; color: #ffffff; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 20px; }
+        nav { text-align: center; margin-bottom: 50px; }
+        nav > a, .dropdown > a { color: #ff0055; margin: 0 15px; text-decoration: none; font-weight: bold; cursor: pointer; }
+        
+        /* Grid Styling */
+        .team-container { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 30px; 
+            width: 80%; 
+            margin: auto; 
+        }
+        
+        .team-card { 
+            background: rgba(20, 20, 25, 0.8); 
+            padding: 20px; 
+            border-radius: 15px; 
+            text-align: center; 
+            border: 1px solid #ff0055; 
+            transition: all 0.3s;
+        }
+        
+        /* Animasi */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .team-card:hover { transform: scale(1.05); border-color: #00d0ff; }
+
+        .team-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #ff0055; margin-bottom: 15px; }
+        .social-links a { color: #ff0055; font-size: 22px; margin: 0 10px; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="webKAIBC.html">Home</a>
+        <div class="dropdown" style="display: inline-block;">
+            <a href="#" onclick="toggleRecruit(event)">Recruitment ▼</a>
+            <div id="recruitDropdown" class="dropdown-content" style="display:none; position:absolute; background:#1a1a1a; padding:10px; border:1px solid #ff0055;">
+                <a href="recruit_staff.html" style="color:white; display:block;">Recruitment Staff</a>
+                <a href="recruit_dev.html" style="color:white; display:block;">Recruitment Developer</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="team-container">
+        <!-- Card Member 1 (Punya IG) -->
+        <div class="team-card reveal">
+            <img src="foto1.jpg" alt="Member">
+            <h3>Fachry</h3>
+            <p>Owner Web</p>
+            <div class="social-links">
+                <a href="https://www.roblox.com/users/4646436606/profile"><i class="fas fa-gamepad"></i></a>
+                <a href="LINK_IG_KAMU"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Card Member 2 (TANPA IG) -->
+        <div class="team-card reveal">
+            <img src="foto2.jpg" alt="Member">
+            <h3>[Nama]</h3>
+            <p>Developer</p>
+            <div class="social-links">
+                <a href="LINK_ROBLOX_KAMU"><i class="fas fa-gamepad"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleRecruit(event) { event.preventDefault(); document.getElementById("recruitDropdown").style.display = (document.getElementById("recruitDropdown").style.display === "block") ? "none" : "block"; }
+        const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('active'); }); }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
