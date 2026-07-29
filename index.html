@@ -54,7 +54,6 @@
 
     <a href="TeamKAIBC(owner-staff).html">Team</a>
     
-    <!-- INI MENU BARU YANG KAMU MAU -->
     <a href="team-profile.html">Staff Profile</a>
     
     <a href="Perjalanan Tentang KAIBC.html">Perjalanan KAIBC</a>
@@ -64,7 +63,7 @@
 
     <div class="section-box">
         <h2>Tentang KAIBC</h2>
-        <p>KAIBC Nextgen adalah komunitas yang berfokus pada Colaboration, Roblox, dan  Roleplay. KAIBC didirikan pada tahun 2023 oleh Founder Rizki (ex founder) dan Dzaff (ex owner) lama dan sekarang diganti oleh Hafizh (Founder & Owner) baru, kami fokus pada Game Roblox yaitu roleplay. Kami mengadakan operasional game KAIBC dihari tertentu.</p>
+        <p>KAIBC Nextgen adalah komunitas yang berfokus pada Colaboration, Roblox, dan Roleplay. KAIBC didirikan pada tahun 2023 oleh Founder Rizki (ex founder) dan Dzaff (ex owner) lama dan sekarang diganti oleh Hafizh (Founder & Owner) baru, kami fokus pada Game Roblox yaitu roleplay. Kami mengadakan operasional game KAIBC dihari tertentu.</p>
     </div>
 
     <div class="section-box">
@@ -82,17 +81,26 @@
     </footer>
 
     <script>
+        // Dropdown Logic
         function toggleRecruit(event) { event.preventDefault(); document.getElementById("recruitDropdown").classList.toggle("show"); }
         window.onclick = function(event) { if (!event.target.matches('.dropdown > a')) { var dropdowns = document.getElementsByClassName("dropdown-content"); for (var i = 0; i < dropdowns.length; i++) { var openDropdown = dropdowns[i]; if (openDropdown.classList.contains('show')) { openDropdown.classList.remove('show'); } } } }
         
-        // Script Password Tambahan
-        function checkPassword() {
+        // Cek Akses dengan localStorage
+        function cekAkses() {
+            if (localStorage.getItem("sudahLogin") === "true") {
+                return;
+            }
+
             var password = prompt("Masukkan Password Staff KAIBC:");
-            if (password !== "KAIBC123") { 
-                window.location.href = "https://google.com"; 
+            if (password === "KAIBC123") { 
+                localStorage.setItem("sudahLogin", "true");
+            } else {
+                alert("Password salah!");
+                window.location.href = "https://google.com";
             }
         }
-        checkPassword();
+
+        cekAkses();
     </script>
 
 </body>
