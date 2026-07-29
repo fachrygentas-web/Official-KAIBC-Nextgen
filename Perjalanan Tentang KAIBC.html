@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Perjalanan KAIBC | KAIBC Nextgen</title>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px;
+            /* Animasi masuk halaman */
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Kotak Utama */
+        .content-box {
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-left: 5px solid #ff0055;
+            border-radius: 5px;
+            max-width: 800px;
+            margin: auto;
+            /* Animasi muncul pelan-pelan */
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        h1 { color: #ff0055; }
+        h2 { color: #ffffff; margin-top: 25px; }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #ff0055;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="content-box">
+        <h1>Cerita Perjalanan Awal KAIBC</h1>
+        <p>Di sini kamu bisa menuliskan sejarah terbentuknya KAIBC, dari awal mula komunitas ini dirintis hingga perkembangan yang terjadi sampai saat ini.</p>
+        
+        <h2>Awal Mula</h2>
+        <p>Ceritakan tentang siapa saja pendirinya dan apa visi awal dibuatnya komunitas ini.</p>
+        
+        <h2>Perkembangan</h2>
+        <p>Jelaskan tonggak sejarah atau pencapaian besar yang sudah diraih KAIBC.</p>
+        
+        <a href="webKAIBC.html" class="back-link">← Kembali ke Home</a>
+    </div>
+
+</body>
+</html>
